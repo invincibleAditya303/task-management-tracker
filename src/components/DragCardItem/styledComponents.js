@@ -11,7 +11,7 @@ export const DragTaskListItem = styled.li`
 
     @media (width <= 776px) {
         width: 35vw;
-        hieght: 30vh;
+        height: 30vh;
     }
 `
 
