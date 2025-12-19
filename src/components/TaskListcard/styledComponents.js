@@ -14,6 +14,11 @@ export const TaskListItem = styled.li`
     border-radius: 10px;
     list-style-type: none;
     margin-bottom: 8px;
+
+    @media (width <= 776px) {
+        width: 40vw;
+        height: 40vh;
+    }
 `
 
 export const TaskTitle = styled.p`

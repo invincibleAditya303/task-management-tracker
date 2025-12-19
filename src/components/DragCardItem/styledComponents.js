@@ -8,6 +8,11 @@ export const DragTaskListItem = styled.li`
     border-radius: 10px;
     list-style-type: none;
     margin-bottom: 8px;
+
+    @media (width <= 776px) {
+        width: 35vw;
+        hieght: 30vh;
+    }
 `
 
 export const DragTaskTitle = styled.p`
