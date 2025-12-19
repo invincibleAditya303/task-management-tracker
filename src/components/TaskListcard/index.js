@@ -1,26 +1,33 @@
-import { useDrag } from "react-dnd"
-import { TaskDescriptionText, TaskListContainer, TaskListItem, TaskStatusText, TaskTitle } from "./styledComponents"
+import { StatusButton, StatusChangeContainer, StatusChangeText, TaskDescriptionText, TaskListContainer, TaskListItem, TaskStatusText, TaskTitle } from "./styledComponents"
 import AuthContext from "../../context/AuthContext"
 import DragCardItem from "../DragCardItem"
+import {getTasks} from "../../utils/storage"
 
 const TaskListCard = () => (
     <AuthContext.Consumer>
         {value => {
-            const {tasksList, currentUser} = value
+            const {currentUser, onClickStatusChange} = value
+            const tasksList = getTasks()
+            const userTasksList = tasksList.filter(eachTask => eachTask.assigneeId === currentUser[0].id)
+            console.log(tasksList)
             return (
                 <>
-                {currentUser.role === 'user' &&
+                {currentUser[0].role === 'user' &&
                     <TaskListContainer>
-                        {tasksList.map(eachTask => 
+                        {userTasksList.map(eachTask => 
                             <TaskListItem key={eachTask.id}>
-                                <TaskTitle>{eachTask.title}</TaskTitle>
+                               <TaskTitle>{eachTask.title}</TaskTitle>
                                 <TaskDescriptionText>{eachTask.description}</TaskDescriptionText>
-                                <TaskStatusText>{eachTask.status}</TaskStatusText>
+                                <TaskStatusText>Status: {eachTask.status}</TaskStatusText>
+                                <StatusChangeContainer>
+                                    <StatusChangeText>Is task completed?</StatusChangeText>
+                                    <StatusButton onClick={() => onClickStatusChange(eachTask.id)}>Click Here</StatusButton>
+                                </StatusChangeContainer>
                             </TaskListItem>
                         )}
                     </TaskListContainer>
                 }
-                {currentUser.role === 'admin' &&
+                {currentUser[0].role === 'admin' &&
                     <TaskListContainer>
                         {tasksList.map(eachTask => 
                             <DragCardItem task={eachTask} key={eachTask.id} />

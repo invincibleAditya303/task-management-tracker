@@ -35,7 +35,7 @@ export const TaskFormDetailsContainer = styled.div`
 `
 
 export const TaskFormContainer = styled.form`
-    width: 45vh;
+    width: 45vw;
     height: 63vh;
     background-color: #ebe7e2;
     display: flex;
@@ -99,7 +99,7 @@ export const TaskAddButton = styled.button`
     background-color: #306acf;
     color: #ffffff;
     font-size: 16px;
-    font-family: "Roboto;
+    font-family: "Roboto";
     padding: 7px;
     border-radius: 8px;
     border-width: 0px;
@@ -123,5 +123,27 @@ export const TaskFormImage = styled.img`
         height: 30vh;
         width: 80vw;
         margin-bottom: 20px;
+    }
+`
+
+export const AddtaskErrMsg = styled.p`
+    color: #ff0b37;
+    font-size: 16px;
+    font-family: "Roboto";
+    padding-bottom: 15px;
+
+    @media (width <= 776px) {
+        font-size: 12px;
+    }
+`
+
+export const AddTaskSuccessMsg = styled.p`
+    color: #279123;
+    font-size: 16px;
+    font-family: "Roboto";
+    padding-bottom: 15px;
+
+    @media (width <= 776px) {
+        font-size: 12px;
     }
 `

@@ -2,9 +2,10 @@ import React from "react"
 
 const AuthContext = React.createContext({
     currentUser: {},
-    taskList: [],
     onLoggedIn: () => {},
-    onLogOut: () => {}
+    onLogOut: () => {},
+    onDropTask: () => {},
+    onClickStatusChange: () => {}
 })
 
 export default AuthContext

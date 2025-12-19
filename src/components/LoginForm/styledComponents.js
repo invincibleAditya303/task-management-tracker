@@ -120,6 +120,7 @@ export const LoginButton = styled.button`
 `
 
 export const ErrMsg = styled.p`
+    color: #ff0b37;
     font-size: 16px;
     font-family: "Roboto";
 

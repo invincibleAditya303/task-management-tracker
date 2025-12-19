@@ -6,17 +6,17 @@ const DragCardItem = props => {
     const {id, title, description, status} = task
     const [{isDragging}, dragRef] = useDrag(() => ({
         type: 'TASK',
-        id: id,
+        item: {id},
         collect: (monitor) => ({
             isDragging: monitor.isDragging()
         })
     }))
 
     return (
-        <DragTaskListItem>
+        <DragTaskListItem ref={dragRef} $isDragging={isDragging}>
             <DragTaskTitle>{title}</DragTaskTitle>
             <DragTaskDescriptionText>{description}</DragTaskDescriptionText>
-            <DargTaskStatusText>{status}</DargTaskStatusText>
+            <DargTaskStatusText>Status: {status}</DargTaskStatusText>
         </DragTaskListItem>
     )
 }

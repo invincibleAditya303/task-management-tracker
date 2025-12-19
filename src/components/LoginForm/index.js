@@ -22,7 +22,6 @@ const LoginForm = props => {
         }
 
         const usersList = getUsers()
-        console.log(usersList)
         const isExistingUser = usersList.find(user => user.username === username)
 
         if (!isExistingUser) {
