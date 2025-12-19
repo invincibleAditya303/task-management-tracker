@@ -8,7 +8,7 @@ export const TaskListContainer = styled.ul`
 `
 
 export const TaskListItem = styled.li`
-    height: 20vh;
+    height: 30vh;
     width: 30vw;
     background-color: #ffffff;
     border-radius: 10px;
