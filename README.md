@@ -41,21 +41,22 @@ Data is stored in **localstorage**. SO no backend server is required.
 
 ```
 task-management-tracker/
-├── components/
-| ├── Dashboard/
-| ├── DragCardItem/
-| ├── Header/
-| ├── LoginForm/
-| ├── TaskForm/
-| ├── TaskListCard/
-| ├── UserItemCard/
-| ├── UsersList
-├──context/
-| ├── AuthContext.js
-├──utils
-| ├── storage.js
-├── App.js
-├── index.js
+├──src/
+  ├── components/
+  | ├── Dashboard/
+  | ├── DragCardItem/
+  | ├── Header/
+  | ├── LoginForm/
+  | ├── TaskForm/
+  | ├── TaskListCard/
+  | ├── UserItemCard/
+  | ├── UsersList
+  ├──context/
+  | ├── AuthContext.js
+  ├──utils
+  | ├── storage.js
+  ├── App.js
+  ├── index.js
 ```
 
 ---
